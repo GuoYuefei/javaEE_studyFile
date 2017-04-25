@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+  <display-name>Struts</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  	<!-- 过滤器配置文本区 -->
+<filter>
+	<filter-name>characterEncodingFilter</filter-name>
+	<filter-class>cn.becomegood.web.filtertest.CharacterEncodingFilter</filter-class>
+	<init-param>
+		<param-name>characterEncoding</param-name>		<!-- 设置编码方式 -->
+		<param-value>UTF-8</param-value>
+	</init-param>
+	<init-param>
+		<param-name>enabled</param-name>				<!-- 设置是否启动这个编码filter -->
+		<param-value>true</param-value>
+	</init-param>	
+</filter>
+
+<!-- 过滤器mapping设置文本区 -->
+<filter-mapping>
+	<filter-name>characterEncodingFilter</filter-name>
+	<url-pattern>/*</url-pattern>				<!-- 设置所有该项目的网页都要经过该过滤器 -->
+</filter-mapping>	
+
+
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <init-param>
+      <param-name>detail</param-name>
+      <param-value>3</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+</web-app>

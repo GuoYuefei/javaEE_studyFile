@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<struts-config>
+	<!--  
+  
+  <form-beans />
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings />  -->
+  
+  <!-- 数据源配置。可以配置多组！ -->
+  <data-sources>
+  	<data-source type="org.apache.tomcat.dbcp.dbcp2.BasicDataSource">
+  		<set-property value="com.mysql.jdbc.Driver" property="driverClassName"/>
+  		<set-property value="jdbc:mysql://127.0.0.1:3306/test" property="url"/>
+  		<set-property value="root" property="username"/>
+  		<set-property value="123456" property="password"/>
+  	</data-source>
+  </data-sources>
+  
+  <!-- 国际化信息配置 -->
+  <message-resources parameter="cn.becomegood.struts.ApplicationResources" />
+
+  <form-beans>
+  	<form-bean name="helloForm" type="cn.becomegood.struts.form.HelloForm"></form-bean>
+  </form-beans>
+  <action-mappings>
+  	<action	attribute="helloForm" 
+  		input="/form/hello.jsp"
+  		name="helloForm"
+  		path="/hello"
+  		scope="request"
+  		type="cn.becomegood.struts.action.HelloAction">
+  		<forward name="success" path="/form/helloSuccess.jsp"></forward>
+  		<forward name="fail" path="/form/helloFail.jsp" redirect="true"></forward>
+  	</action>
+  </action-mappings>
+  
+</struts-config>
+

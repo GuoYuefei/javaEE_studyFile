@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+                        
+<!-- 测试自定义标签都在MyJsp.jsp中定义 -->
+<taglib>
+ <tlib-version>1.0</tlib-version>
+ <jsp-version>2.0</jsp-version>
+ <short-name>tag</short-name>
+ <uri>http://www.becomegood.cn/tag</uri>
+ <!-- 1 -->
+ <tag>
+  	<name>copyright</name>
+  	<tag-class>cn.becomegood.web.constomtld.Copyright</tag-class>
+  	<body-content>JSP</body-content>
+ </tag>
+ <!-- 2 -->
+ <tag>
+ 	<name>Hello</name>
+ 	<tag-class>cn.becomegood.web.constomtld.Hello</tag-class>
+ 	<body-content>JSP</body-content>
+ 	<attribute>
+ 		<name>name</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ </tag>
+ <!-- 3 -->
+ <tag>
+ 	<name>title</name>
+ 	<tag-class>cn.becomegood.web.constomtld.Title</tag-class>
+ 	<body-content>empty</body-content>
+ </tag>
+ <!-- 作为3标签的子标签 -->
+ <tag>
+ 	<name>Dyn</name>
+ 	<tag-class>cn.becomegood.web.constomtld.Dyn</tag-class>
+ 	<body-content>JSP</body-content>
+ 	<dynamic-attributes>true</dynamic-attributes>
+ 	<attribute>
+ 		<name>name</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+</tag>
+ 
+ <!-- 4 -->
+ <tag>
+ 	<name>ToLow</name>
+ 	<tag-class>cn.becomegood.web.constomtld.ToLow</tag-class>
+ 	<body-content>tagdependent</body-content>
+ </tag>
+ 
+<!-- 5 -->
+ <tag>
+ 	<name>code</name>
+ 	<tag-class>cn.becomegood.web.constomtld.Code</tag-class>
+ 	<body-content>empty</body-content>
+ 	<attribute>
+ 		<name>var</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ </tag>
+ 
+ 
+ 
+</taglib>

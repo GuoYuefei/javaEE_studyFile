@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+	<Resource name="jdbc/jstl" type="javax.sql.DataSource"
+		driverClassName="com.mysql.jdbc.Driver" 
+		maxIdle="5" maxWait="500"
+		username="root" password="123456" 
+		url="jdbc:mysql://127.0.0.1:3306/test"
+		maxActive="20"/>
+</Context>
+
+
+<!-- 
+	name：JDBC数据源的名称
+	auth：认证方式，一般设置为Container,还有一种是Application
+	type：当前配置资源的类别
+	factory：数据源工厂,默认为"org.apache.commons.dbcp.BasicDataSourceFactory"
+	driverClassName：驱动的全路径类名
+	maxActive：当前数据源支持的最大并发数
+	maxIdle：连接池中保留最大数目的闲置连接数
+	maxWait：当连接池中无连接时的最大等待毫秒数，在等当前设置时间过后还无连接则抛出异常	0表示无限制
+	username：访问数据库的用户名
+	password：访问数据库的密码
+	url：JDBC驱动的连接字符串
+-->  
+

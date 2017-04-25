@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+                        
+<!-- 测试自定义标签都在MyJsp.jsp中定义 -->
+<taglib>
+ <tlib-version>1.0</tlib-version>
+ <jsp-version>2.0</jsp-version>
+ <short-name>my</short-name>
+ <uri>http://www.becomegood.cn/fly</uri>
+
+<!-- 1 -->
+ <tag>
+ 	<name>code</name>
+ 	<tag-class>cn.becomegood.fly.taglib.Code</tag-class>
+ 	<body-content>empty</body-content>
+ 	<attribute>
+ 		<name>var</name>
+ 		<required>true</required>
+ 		<rtexprvalue>true</rtexprvalue>
+ 	</attribute>
+ </tag>
+ 
+ 
+ 
+</taglib>
